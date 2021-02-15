@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::resource('/', 'DashboardController');
+Route::resource('jsindex/', 'JSController');
+
+Route::get('/clc', function() {
+	Artisan::call('cache:clear');
+	Artisan::call('config:clear');
+	Artisan::call('config:cache');
+	Artisan::call('view:clear');
+    // Artisan::call('optimize');
+    // Artisan::call('clear-compiled');
+    // session()->forget('key');
+	return "Cleared!";
 });
