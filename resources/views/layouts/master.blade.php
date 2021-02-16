@@ -19,7 +19,7 @@
     <!-- Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
-    <link rel="icon" href="public/image/logo.ico" type="image/x-icon">
+    <link rel="icon" href="{{asset('public/image/logo.ico')}}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <a href="{{url("/")}}">
-                            <img class="img-fluid" src="public/image/logo.png" alt="Theme-Logo" width="40">
+                            <img class="img-fluid" src="{{ asset('public/image/logo.png')}}" alt="Theme-Logo" width="40">
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>
@@ -120,8 +120,8 @@
                         <ul class="nav-right">
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <img src="{{ asset('files/assets/images/avatar-4.jpg')}}" class="img-radius" alt="User-Profile-Image">
+                                    <span>Super Admin</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -165,9 +165,37 @@
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="{{url("/")}}">
+                                    <a href="{{url("/dashboard")}}">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>N</b></span>
                                         <span class="pcoded-mtext">Home</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class='ti-html5'></i><b>N</b></span>
+                                        <span class="pcoded-mtext">HTML</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class='ti-css3'></i><b>N</b></span>
+                                        <span class="pcoded-mtext">CSS</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url("js/index")}}">
+                                        <span class="pcoded-micon"><i class='fab fa-js-square'></i><b>N</b></span>
+                                        <span class="pcoded-mtext">JavaScript</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#">
+                                        <span class="pcoded-micon"><i class='fab fa-php'></i><b>N</b></span>
+                                        <span class="pcoded-mtext">PHP</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -239,6 +267,8 @@
     <script src="{{ asset('files/assets/pages/jquery.filer/js/jquery.filer.min.js') }}"></script>
     <script src="{{ asset('files/assets/pages/filer/custom-filer.js')}}" ></script>
     <script src="{{ asset('files/assets/pages/filer/jquery.fileuploads.init.js') }}" ></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <script>
         $(document).ready(function () {

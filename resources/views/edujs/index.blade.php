@@ -18,7 +18,7 @@
         <div class="col">
             <div class="page-header-breadcrumb">
                 <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a>
+                    <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a>
                     </li>
                     <li class="breadcrumb-item"><a href="{{url('js/index/')}}">JavaScript</a>
                     </li>
@@ -30,13 +30,23 @@
 
 <div class="row">
     <div class="col-xl-12 col-md-12">
-        <div class="card">
+        <div class="card tabs-card">
             <div class="card-header">
                 <h5>Learning List</h5>
             </div>
-            <div class="card-block">
-                <div class="col-sm-12">
-                    <div class="row">
+            <div class="card-block p-0">
+                <ul class="nav nav-tabs md-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#basic" role="tab"><i class="fa fa-home"></i>Basic</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#advance" role="tab"><i class="fa fa-key"></i>Advance</a>
+                        <div class="slide"></div>
+                    </li>
+                </ul>
+                <div class="tab-content card-block">
+                    <div class="tab-pane active" id="basic" role="tabpanel">
                         <div class="dt-responsive table-responsive">
                             <table id="example1" class="table">
                                 <thead>
@@ -48,7 +58,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($js as $key => $item)
+                                    @foreach ($jsbasic as $key => $item)
+                                    <tr>
+                                        <td class="text-middle text-center">{{$key+1}}</td>
+                                        <td class="text-middle">{{$item->js_title}}</td>
+                                        <td class="text-middle">{{$item->js_description}}</td>
+                                        <td class="text-middle text-center">
+                                            <button onclick="detail({{$item->js_id}})" class="btn btn-primary btn-outline-primary btn-round">Learning</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="advance" role="tabpanel">
+                        <div class="dt-responsive table-responsive">
+                            <table id="example1" class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;">#</th>
+                                        <th style="text-align: center;">Tutorial</th>
+                                        <th style="text-align: center;">Description</th>
+                                        <th style="text-align: center;">More</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($jsadv as $key => $item)
                                     <tr>
                                         <td class="text-middle text-center">{{$key+1}}</td>
                                         <td class="text-middle">{{$item->js_title}}</td>

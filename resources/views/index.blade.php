@@ -16,7 +16,7 @@
         <div class="col">
             <div class="page-header-breadcrumb">
                 <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a>
+                    <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a>
                     </li>
                 </ul>
             </div>
@@ -65,42 +65,10 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-xl-12 col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5>รายการลา</h5>
-            </div>
-            <div class="card-block">
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="dt-responsive table-responsive">
-                            <table id="example1" class="table">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align: center;">ลำดับ</th>
-                                        <th style="text-align: center;">ชื่อ - นามสกุล</th>
-                                        <th style="text-align: center;">แผนก</th>
-                                        <th style="text-align: center;">วันที่ลา - วันสิ้นสุด</th>
-                                        <th style="text-align: center;">ประเภทการลา</th>
-                                        <th style="text-align: center;">สถานนะการอนุมัติ</th>
-                                        <th style="text-align: center;">การจัดการ</th>
-                                    </tr>
-                                </thead>
-                                
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div id="result-modaleditdayoff"></div>
 @endsection
 @section('js')
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
 @include('flash-message')
 <script>
     function notalready() {

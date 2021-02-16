@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::resource('/', 'DashboardController');
+Route::resource('/dashboard', 'DashboardController');
 Route::resource('js/index', 'JSController');
 Route::get('js/detail/{id}', 'JSController@jsdetail');
 

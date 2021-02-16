@@ -14,8 +14,12 @@ class JSController extends Controller
      */
     public function index()
     {
-        $js = js::all();
-        $data = array('js' => $js, );
+        $jsbasic = js::where('js_status', 1)->get();
+        $jsadv = js::where('js_status', 2)->get();
+        $data = array(
+            'jsbasic' => $jsbasic, 
+            'jsadv' => $jsadv, 
+        );
         return view('edujs.index', $data);
     }
 
