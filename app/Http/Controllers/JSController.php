@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\js;
 
 class JSController extends Controller
 {
@@ -13,7 +14,9 @@ class JSController extends Controller
      */
     public function index()
     {
-        return view('edujs.index');
+        $js = js::all();
+        $data = array('js' => $js, );
+        return view('edujs.index', $data);
     }
 
     /**
@@ -80,5 +83,12 @@ class JSController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function jsdetail($id)
+    {
+        $js = js::findOrFail($id);
+        $data = array('js' => $js, );
+        return view('edujs.jsdetail', $data);
     }
 }

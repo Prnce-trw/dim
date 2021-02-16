@@ -50,7 +50,7 @@
                 {{-- <h6>Java Script</h6> --}}
                 <h2 class="text-right"><i class='fab fa-js-square f-left'></i><span>JavaScript</span></h2>
                 <br>
-                <p class="m-b-0">Learning <a href="{{url('jsindex')}}" style="color: white"><span class="f-right icon-gopage"></span></a></p>
+                <p class="m-b-0">Learning <a href="{{url('js/index')}}" style="color: white"><span class="f-right icon-gopage"></span></a></p>
             </div>
         </div>
     </div>

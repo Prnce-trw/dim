@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('css')
+<!-- Syntax highlighter Prism css -->
+<link rel="stylesheet" type="text/css" href="{{asset('files/assets/pages/prism/prism.css')}}">
 @endsection
 @section('content')
 <div class="card page-header p-0">
@@ -18,7 +20,7 @@
                 <ul class="breadcrumb-title">
                     <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="{{url('jsindex/')}}">JavaScript</a>
+                    <li class="breadcrumb-item"><a href="{{url('js/index/')}}">JavaScript</a>
                     </li>
                 </ul>
             </div>
@@ -46,26 +48,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($js as $key => $item)
                                     <tr>
-                                        <td class="text-middle text-center">1</td>
-                                        <td class="text-middle">JS Basic</td>
-                                        <td class="text-middle">
-                                            บทเรียนการเขียนภาษา JavaScript เบื่องต้น โครงสร้างและหลักการของภาษา 
-                                        </td>
+                                        <td class="text-middle text-center">{{$key+1}}</td>
+                                        <td class="text-middle">{{$item->js_title}}</td>
+                                        <td class="text-middle">{{$item->js_description}}</td>
                                         <td class="text-middle text-center">
-                                            <button class="btn btn-primary btn-outline-primary btn-round">Learning</button>
+                                            <button onclick="detail({{$item->js_id}})" class="btn btn-primary btn-outline-primary btn-round">Learning</button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-middle text-center">2</td>
-                                        <td class="text-middle">JS Basic</td>
-                                        <td class="text-middle">
-                                            บทเรียนการเขียนภาษา JavaScript เบื่องต้น โครงสร้างและหลักการของภาษา 
-                                        </td>
-                                        <td class="text-middle text-center">
-                                            <button class="btn btn-primary btn-outline-primary btn-round">Learning</button>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -76,10 +68,28 @@
     </div>
 </div>
 
-<div id="result-modaleditdayoff"></div>
+<div id="result-modaljsdetail"></div>
 @endsection
 @section('js')
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<!-- Syntax highlighter prism js -->
+<script src="{{asset('files/assets/pages/prism/custom-prism.js')}}"></script>
+<!-- i18next.min.js -->
+<script src="{{asset('files/bower_components/i18next/js/i18next.min.js')}}"></script>
+<script src="{{asset('files/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js')}}"></script>
+<script src="{{asset('files/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js')}}"></script>
+<script src="{{asset('files/bower_components/jquery-i18next/js/jquery-i18next.min.js')}}"></script>
 @include('flash-message')
-
+<script>
+    function detail(id) {
+        $.ajax({
+            url: '{{ url('js/detail') }}/' + id,
+            type: 'GET',
+            data: {id: id},
+        }).done(function (data) {
+            $('#result-modaljsdetail').html(data);
+            $("#modaljsdetail").modal('show');
+        });
+    }
+</script>
 @endsection

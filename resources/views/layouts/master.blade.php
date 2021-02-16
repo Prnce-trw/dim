@@ -52,8 +52,6 @@
     <link rel="stylesheet" href="{{asset('/css/custom.css')}}" />
     <!-- My Custom js -->
     <script  src="{{asset('js/custom.js')}}"></script>
-    <!---================ Crop Image -------==================-->
-    <link href="{{ asset('plugins/crop/croppie.css') }}" type="text/css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
     <!-- jquery file upload Frame work -->
     <link href="{{ asset('files/assets/pages/jquery.filer/css/jquery.filer.css') }}" type="text/css" rel="stylesheet" />
@@ -237,9 +235,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
     <!-- Max-length js -->
     <script src="{{asset('files/bower_components/bootstrap-maxlength/js/bootstrap-maxlength.js')}}"></script>
-    <!-- DATE PICKER -->
-    <!-- DATE crop image -->
-    <script src="{{ asset('plugins/crop/croppie.js') }}"></script>
     <!-- jquery file upload js -->
     <script src="{{ asset('files/assets/pages/jquery.filer/js/jquery.filer.min.js') }}"></script>
     <script src="{{ asset('files/assets/pages/filer/custom-filer.js')}}" ></script>

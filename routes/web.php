@@ -16,7 +16,9 @@
 // });
 
 Route::resource('/', 'DashboardController');
-Route::resource('jsindex/', 'JSController');
+Route::resource('js/index', 'JSController');
+Route::get('js/detail/{id}', 'JSController@jsdetail');
+
 
 Route::get('/clc', function() {
 	Artisan::call('cache:clear');
